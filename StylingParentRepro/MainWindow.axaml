@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StylingParentRepro"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="StylingParentRepro.MainWindow"
+        Title="StylingParentRepro">
+  <local:ThemedPanel Background="Black">
+    <local:ThemedPanel.Styles>
+      <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml" />
+      <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml" />
+    </local:ThemedPanel.Styles>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+      <TextBox Text="Text" />
+      <CheckBox Content="Test" IsChecked="True" />
+      <Button Content="Test">
+        <Button.ContextFlyout>
+          <MenuFlyout>
+            <MenuItem Header="Item1" />
+            <MenuItem Header="Item2" />
+            <MenuItem Header="Item3" />
+          </MenuFlyout>
+        </Button.ContextFlyout>
+      </Button>
+    </StackPanel>
+  </local:ThemedPanel>
+</Window>
